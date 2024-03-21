@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Browse from './Browse'
 import Login from './Login'
 import Header from './Header'
-// import Footer from './Footer'
+import Footer from './Footer'
 
 const Body = () => {
   const appRouter=createBrowserRouter([
@@ -24,7 +24,7 @@ const Body = () => {
     <div>
       <Header/>
       <RouterProvider router={appRouter}/>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   )
 }
