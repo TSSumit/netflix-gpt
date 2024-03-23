@@ -4,6 +4,7 @@ import Browse from './Browse'
 import Login from './Login'
 import Header from './Header'
 import Footer from './Footer'
+import FAQ from './FAQ'
 
 const Body = () => {
   const appRouter=createBrowserRouter([
@@ -18,6 +19,10 @@ const Body = () => {
     {
       path:"/login",
       element:<Login/>
+    },
+    {
+      path:"/faq",
+      element:<FAQ/>
     }
   ])
   return (
