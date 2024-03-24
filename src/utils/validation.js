@@ -1,3 +1,5 @@
+
+
 export const checkPasswordValidation = (password) => {
     if (password.length<8 &&  password.length>20) return "Your password must contain between 8 and 20 characters.";
 
