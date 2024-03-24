@@ -101,9 +101,9 @@ const Login = () => {
 
   return (
     
-    <div className="h-screen  flex justify-center items-center bg-cover bg-center min-h-[621px] ">
+    <div className="h-screen  flex justify-center items-center bg-cover bg-center min-h-screen ">
       <div>
-        <img src={LBACKGROUND_URL} alt='Background' className='absolute h-[981px] w- overflow-hide top-0 left-0 right-0' />
+        <img src={LBACKGROUND_URL} alt='Background' className='absolute w-screen w- overflow-hide top-0 left-0 right-0' />
       </div>
       <div className="m-5">
         <div className='absolute top-0 left-0 right-0 px-40 py-7 bg-gradient-to-b from-black  z-10 w-full flex justify-between h-24'>
@@ -113,7 +113,7 @@ const Login = () => {
           }
         </div>
         
-        <form onSubmit={(e)=> e.preventDefault()} className="w-[405px] backdrop-brightness-25  px-10 py-10 flex-col h-fit text-white   rounded-sm">
+        <form onSubmit={(e)=> e.preventDefault()} className="w-[405px] backdrop-brightness-25  px-10 py-10 flex-col h-fit text-white   rounded-sm flex place-self-end mt-40">
           <h1 className='m-2 pb-4 bold text-3xl'>{isSignIn?'Sign In':'Sign Up'}</h1>
           {
             errorMessage!==null  &&
