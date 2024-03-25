@@ -1,11 +1,13 @@
 import React, { useRef, useState } from 'react';
-import { LBACKGROUND_URL, LOGO_URL } from '../utils/URLs';
-import { Link, useNavigate } from 'react-router-dom';
+import { LBACKGROUND_URL } from '../utils/URLs';
+import { Link } from 'react-router-dom';
 import { checkEmailValidation, checkPasswordValidation, checkFullNameValidation } from '../utils/validation';
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import Header from './Header';
+import Footer from './Footer';
 
 const Login = () => {
   console.log("component is rendered");
@@ -17,7 +19,6 @@ const Login = () => {
   const [fullNameErrorMessage, setFullNameErrorMessage]=useState(null);
   const [errorMessage, setErrorMessage]=useState(null);
   const dispatch=useDispatch();
-  const navigate=useNavigate();
   console.log(errorMessage);
 
   const toggleLearnMore = () => {
@@ -48,72 +49,47 @@ const Login = () => {
       const fullNameCheckMessage=checkFullNameValidation(fullName.current.value);
       setFullNameErrorMessage(fullNameCheckMessage);
       if(emailCheckMessage || passwordCheckMessage || fullNameCheckMessage) return;
-      //sign up Logic
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
 
       .then((userCredential) => {
-        // Signed up 
         const user = userCredential.user;
-
         updateProfile(user, {
-          displayName: fullName.current.value, 
-          // photoURL: "https://example.com/jane-q-user/profile.jpg"
+          displayName: fullName.current.value,
         }).then(() => {
-          // Profile updated!
           const {uid, email, displayName, phoneNumber, photoURL} = auth.currentUser;
-          dispatch(addUser({uid:uid, uemail:email, uname:displayName, uphoneNumber:phoneNumber, uphotoURL:photoURL}));
-          toggleSignIn();
-          navigate("/browse");
+          dispatch(addUser({uid:uid, email:email, displayName:displayName, phoneNumber:phoneNumber, photoURL:photoURL}));
         }).catch((error) => {
-          // An error occurred
           setErrorMessage(error.message);
         });
-
         console.log(user)
-        // ...
       })
-      
       .catch((error) => {
-        // const errorCode = error.code;
         const errorMessage = error.message;
         setErrorMessage(errorMessage);
-        // ..
       });
     }
     else{
       if(emailCheckMessage || passwordCheckMessage) return;
-      //sign in Logic
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
-          // Signed in 
           const user = userCredential.user;
-          navigate("/browse");
-          console.log(user)
-          // ...
+          console.log(`--user sign in with email ${email.current.value} and password ${ password.current.value}---`+user)
         })
         .catch((error) => {
-          // const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorMessage);
         });
     }
   }
 
-  return (
-    
-    <div className="h-screen  flex justify-center items-center bg-cover bg-center min-h-screen ">
-      <div>
-        <img src={LBACKGROUND_URL} alt='Background' className='absolute w-screen w- overflow-hide top-0 left-0 right-0' />
+  return (    
+    <div className='h-full '>
+      <Header />
+      <div className="absolute">
+        <img className="h-[1000px] w-[1300px] object-cover" src={LBACKGROUND_URL} alt="logo" />
       </div>
-      <div className="m-5">
-        <div className='absolute top-0 left-0 right-0 px-40 py-7 bg-gradient-to-b from-black  z-10 w-full flex justify-between h-24'>
-          <img src={LOGO_URL} alt="NetFlix Logo" className='w-40 inline-block' />
-          {!isSignIn &&
-            <button onClick={toggleSignIn} className="py-2 px-5 bg-yellow-600 rounded-md inline-block">Sign In</button>
-          }
-        </div>
-        
-        <form onSubmit={(e)=> e.preventDefault()} className="w-[405px] backdrop-brightness-25  px-10 py-10 flex-col h-fit text-white   rounded-sm flex place-self-end mt-40">
+      <div className='inline-block'>
+        <form onSubmit={(e)=> e.preventDefault()} className="w-[410px] absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
           <h1 className='m-2 pb-4 bold text-3xl'>{isSignIn?'Sign In':'Sign Up'}</h1>
           {
             errorMessage!==null  &&
@@ -144,7 +120,7 @@ const Login = () => {
             {passwordErrorMessage!=null && <p className="m-2 text-xs text-red-400">{passwordErrorMessage}</p>}
           </div>
           
-          <button className="m-2 p-2 bg-yellow-600 rounded-md w-[300px] "  onClick={handleButtonClick}  >{isSignIn?'Sign In':'Sign Up'}</button>
+          <button className="m-2 p-2 bg-yellow-600 rounded-md w-[300px] hover:bg-yellow-500 "  onClick={handleButtonClick}  >{isSignIn?'Sign In':'Sign Up'}</button>
           
           {isSignIn &&
               <div className="flex justify-between text-sm m-2">
@@ -180,6 +156,9 @@ const Login = () => {
             </section>
           }
         </form>
+      </div>
+      <div className='absolute  left-0 right-0 mt-[711px]'>
+        <Footer/>
       </div>
     </div>
   );

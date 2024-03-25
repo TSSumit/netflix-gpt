@@ -7,7 +7,7 @@ const Browse = () => {
   return (
     <div className="flex min-h-screen  flex-col justify-between">
       <Header/>
-      Browse
+      <h1 className='mt-24'>This is The browser window</h1>
       <Footer/>
     </div>
   )

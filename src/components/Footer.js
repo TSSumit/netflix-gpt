@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 // import { Link } from 'react-router-dom'
 
 const Footer = () => {
@@ -11,22 +12,22 @@ const Footer = () => {
                 </ul>
                 <ul className="flex flex-wrap justify-evenly w-full items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                     <li>
-                        <span className="hover:underline mx-4 md:me-6">FAQ</span>
+                        <Link to={"/faq"} className="hover:underline mx-4 md:me-6">FAQ</Link>
                     </li>
                     <li>
-                        <span className="hover:underline mx-16 md:me-6">About</span>
+                        <Link to={"/about"} className="hover:underline mx-16 md:me-6">About</Link>
                     </li>
                     <li>
-                        <span className="hover:underline mx-16 md:me-6">Privacy Policy</span>
+                        <Link to={"privacypolicy"} className="hover:underline mx-16 md:me-6">Privacy Policy</Link>
                     </li>
                     <li>
-                        <span className="hover:underline mx-16 md:me-6">Licensing</span>
+                        <Link to={"/licensing"} className="hover:underline mx-16 md:me-6">Licensing</Link>
                     </li>
                     <li>
-                        <span className="hover:underline mx-16">Contact</span>
+                        <Link to={"/contact"} className="hover:underline mx-16">Contact</Link>
                     </li>
                     <li>
-                        <span className="hover:underline mx-16">Help Center</span>
+                        <Link to={"/helpcenter"} className="hover:underline mx-16">Help Center</Link>
                     </li>
                 </ul>
             </div>

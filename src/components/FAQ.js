@@ -1,8 +1,10 @@
+import Header from "./Header";
 
 
 const FAQ=()=>{
     return (
         <div className="mt-20 mb-10">
+            <Header/>
             <div className="max-w-screen-xl mx-auto px-5 bg-white min-h-sceen">
                 <div className="flex flex-col items-center">
                     <h2 className="font-bold text-5xl mt-5 tracking-tight">
@@ -18,7 +20,7 @@ const FAQ=()=>{
                             <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
                                 <span> What is a SAAS platform?</span>
                                 <span className="transition group-open:rotate-180">
-                                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                                    <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24">
                                         <path d="M6 9l6 6 6-6"></path>
                                     </svg>
                                 </span>
@@ -34,7 +36,7 @@ const FAQ=()=>{
                             <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
                                 <span> How does  billing work?</span>
                                 <span className="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+                            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
             </svg>
                         </span>
                             </summary>
@@ -50,7 +52,7 @@ const FAQ=()=>{
                             <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
                                 <span> Can I get a refund for my subscription?</span>
                                 <span className="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+                            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
             </svg>
                         </span>
                             </summary>
@@ -67,7 +69,7 @@ const FAQ=()=>{
                             <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
                                 <span> How do I cancel my subscription?</span>
                                 <span className="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+                            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
             </svg>
                         </span>
                             </summary>
@@ -83,7 +85,7 @@ const FAQ=()=>{
                             <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
                                 <span> Can I try this platform for free?</span>
                                 <span className="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+                            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
             </svg>
                         </span>
                             </summary>
@@ -98,7 +100,7 @@ const FAQ=()=>{
                             <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
                                 <span> How do I access   documentation?</span>
                                 <span className="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+                            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
             </svg>
                         </span>
                             </summary>
@@ -114,7 +116,7 @@ const FAQ=()=>{
                             <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
                                 <span> How do I contact support?</span>
                                 <span className="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+                            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
             </svg>
                         </span>
                             </summary>
@@ -130,7 +132,7 @@ const FAQ=()=>{
                             <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
                                 <span> Do you offer any discounts or promotions?</span>
                                 <span className="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+                            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
             </svg>
                         </span>
                             </summary>
@@ -145,7 +147,7 @@ const FAQ=()=>{
                             <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
                                 <span> How do we compare to other similar services?</span>
                                 <span className="transition group-open:rotate-180">
-                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
+                            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path>
             </svg>
                         </span>
                             </summary>

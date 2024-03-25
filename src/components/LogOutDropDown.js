@@ -3,19 +3,17 @@ import { LOGOUT_URL  } from '../utils/URLs';
 import { useSelector } from 'react-redux';
 import { signOut } from "firebase/auth";
 import { auth } from '../utils/firebase';
-import { useNavigate } from 'react-router-dom';
 const LogOutDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate=useNavigate();
   const user = useSelector((state) => state.user);
   if (!user) {
     return <div>Loading...</div>; // or any other fallback UI
   }
-  const {uemail}=user;
-  console.log(uemail);
+  const {email, displayName, uid}=user;
+  console.log(email+" "+displayName+" "+uid);
   const handleSignOut=()=>{
     signOut(auth).then(() => {
-        navigate("/error")
+        
     }).catch((error) => {
     // An error happened.
     });
@@ -52,7 +50,7 @@ const LogOutDropdown = () => {
           <div className="px-4 py-3">
             <p className="text-sm leading-5">Signed in as</p>
             <p className="cursor-pointer text-sm font-medium leading-5 text-gray-900 truncate">
-              {uemail}
+              {displayName}
             </p>
           </div>
           <div className="py-1">
