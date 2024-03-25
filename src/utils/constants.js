@@ -7,3 +7,11 @@ export const LOGO_URL="https://yetiograch.pl/wp-content/uploads/2016/01/Netflix-
 export const LOGOUT_URL="https://th.bing.com/th/id/OIP.pyJ98LxHbaFfzcFu-coKNQHaHS?rs=1&pid=ImgDetMain";
 
 export const ERRORLOGO_URL="https://user-images.githubusercontent.com/43953425/166269493-acd08ccb-4df3-4474-95c7-ad1034d3c070.svg";
+
+export const API_OPTIONS={
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YzlmYWY3M2UwM2UwMjA4ODViYTI5ZmJmNGZiNjIyZiIsInN1YiI6IjY2MDFhZWZmMWIxZjNjMDEzMDk2MDQ0NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0LcxgWSrCnLDGcbU_c1cQw_0PgFs1w22Lej6So4BV68'
+    }
+  };

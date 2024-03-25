@@ -1,5 +1,5 @@
 import React from 'react'
-import { ERRORLOGO_URL } from '../utils/URLs';
+import { ERRORLOGO_URL } from '../utils/constants';
 import { Link } from 'react-router-dom';
 
 const Error=()=> {

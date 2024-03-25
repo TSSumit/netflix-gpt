@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { LBACKGROUND_URL } from '../utils/URLs';
+import { LBACKGROUND_URL } from '../utils/constants';
 import { Link } from 'react-router-dom';
 import { checkEmailValidation, checkPasswordValidation, checkFullNameValidation } from '../utils/validation';
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile } from "firebase/auth";

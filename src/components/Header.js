@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { LOGO_URL } from '../utils/URLs';
+import { LOGO_URL } from '../utils/constants';
 import LogOutDropdown from './LogOutDropDown';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';

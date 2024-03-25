@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LOGOUT_URL  } from '../utils/URLs';
+import { LOGOUT_URL  } from '../utils/constants';
 import { useSelector } from 'react-redux';
 import { signOut } from "firebase/auth";
 import { auth } from '../utils/firebase';

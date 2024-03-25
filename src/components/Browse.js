@@ -1,9 +1,11 @@
-import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import React  from 'react'
+import useNowPlayingMovies from '../hooks/useNowPlayingMovies'
 
 
 const Browse = () => {
+  useNowPlayingMovies();
   return (
     <div className="flex min-h-screen  flex-col justify-between">
       <Header/>
