@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
-import { LOGOUT_URL  } from '../utils/constants';
+import { Logout } from '@icon-park/react';
 import { useSelector } from 'react-redux';
 import { signOut } from "firebase/auth";
 import { auth } from '../utils/firebase';
+import { useNavigate } from 'react-router-dom';
 const LogOutDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user);
+  console.log(user);
   if (!user) {
     return <div>Loading...</div>; // or any other fallback UI
   }
-  const {email, displayName, uid}=user;
-  console.log(email+" "+displayName+" "+uid);
+  const {uemail, udisplayName, uid}=user;
+  console.log(uemail+" "+udisplayName+" "+uid);
   const handleSignOut=()=>{
     signOut(auth).then(() => {
         
     }).catch((error) => {
     // An error happened.
+      navigate("/error");
     });
   }
 
@@ -38,7 +42,7 @@ const LogOutDropdown = () => {
           aria-controls="headlessui-menu-items-117"
           onClick={toggleDropdown}
         >
-          <img src={LOGOUT_URL} alt='LogOut' className='m-[2px] h-6 w-6 align-middle' />
+          <Logout theme="filled" size="23" fill="#fc0408"/>
         </span>
       </span>
       <div
@@ -50,7 +54,7 @@ const LogOutDropdown = () => {
           <div className="px-4 py-3">
             <p className="text-sm leading-5">Signed in as</p>
             <p className="cursor-pointer text-sm font-medium leading-5 text-gray-900 truncate">
-              {displayName}
+              {udisplayName}
             </p>
           </div>
           <div className="py-1">

@@ -6,12 +6,12 @@ import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfil
 import { auth } from '../utils/firebase';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { PreviewCloseOne, PreviewOpen } from '@icon-park/react';
 import Header from './Header';
 import Footer from './Footer';
 
 const Login = () => {
-  console.log("component is rendered");
-
+  console.log("Login component is rendered");
   const [learnMore, setLearnMore] = useState(false);
   const [isSignIn, setIsSignIn] = useState(false);
   const [emailErrorMessage, setEmailErrorMessage]=useState(null);
@@ -19,7 +19,7 @@ const Login = () => {
   const [fullNameErrorMessage, setFullNameErrorMessage]=useState(null);
   const [errorMessage, setErrorMessage]=useState(null);
   const dispatch=useDispatch();
-  console.log(errorMessage);
+  // console.log(errorMessage);
 
   const toggleLearnMore = () => {
     setLearnMore(!learnMore);
@@ -54,14 +54,15 @@ const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         updateProfile(user, {
-          displayName: fullName.current.value,
+          displayName: fullName.current.value
         }).then(() => {
           const {uid, email, displayName, phoneNumber, photoURL} = auth.currentUser;
           dispatch(addUser({uid:uid, email:email, displayName:displayName, phoneNumber:phoneNumber, photoURL:photoURL}));
+          console.log("data added in auth while SignUp is : name- "+displayName+", email- "+email);
         }).catch((error) => {
           setErrorMessage(error.message);
         });
-        console.log(user)
+        console.log("user from handle button click : "+user)
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -73,7 +74,9 @@ const Login = () => {
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(`--user sign in with email ${email.current.value} and password ${ password.current.value}---`+user)
+          const {uid, email, displayName, phoneNumber, photoURL} = user;
+          dispatch(addUser({uid:uid, email:email, displayName:displayName, phoneNumber:phoneNumber, photoURL:photoURL}));
+          console.log("data added in auth while SignIp is : name- "+displayName+", email- "+email+", \n  user data: "+user);
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -85,6 +88,8 @@ const Login = () => {
   return (    
     <div className='h-full '>
       <Header />
+      <PreviewCloseOne theme="outline" size="24" fill="#333"/>
+      <PreviewOpen theme="outline" size="24" fill="#333"/>
       <div className="absolute">
         <img className="h-[1000px] w-[1300px] object-cover" src={LBACKGROUND_URL} alt="logo" />
       </div>
