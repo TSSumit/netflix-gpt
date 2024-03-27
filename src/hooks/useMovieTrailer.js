@@ -10,10 +10,10 @@ const useMovieTrailer=(movieId)=>{
         const json=await data.json();
         const filterTrailer=json.results.filter((video)=>video.type==="Trailer" && video.name==="Official Trailer");
         const trailer=filterTrailer.length>0?filterTrailer[0]:json.results[0];
-        console.log("-----------"+filterTrailer)
+        // console.log("-----------"+filterTrailer)
         // const movieKey=trailer.key;
         dispatch(addTrailerVideo(trailer));
-        console.log(filterTrailer+" and  now playing movies: "+json.results);
+        // console.log(filterTrailer+" and  now playing movies: "+json.results);
     }
     useEffect(()=>{
        !trailer &&  getMovieVideos()

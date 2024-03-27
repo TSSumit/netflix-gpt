@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer className="mt-[425px] p-4 backdrop-brightness-25 ">
+    <footer className="mt-[425px] p-4 bg-gray-900 backdrop-brightness-25 ">
         <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-            <div className="sm:flex sm:items-center sm:justify-between flex-col">
+            <div className="sm:flex sm:items-center sm:justify-between flex-col  text-gray-500">
                 <ul className="justify-start my-5">
                   <li>Questions? Call 000-800-919-1694</li>
                 </ul>
-                <ul className="flex flex-wrap justify-evenly w-full items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <ul className="flex flex-wrap justify-evenly w-full items-center mb-6 text-sm font-medium sm:mb-0 dark:text-gray-400">
                     <li>
                         <Link to={"/faq"} className="hover:underline mx-4 md:me-6">FAQ</Link>
                     </li>

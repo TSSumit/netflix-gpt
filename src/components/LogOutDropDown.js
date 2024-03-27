@@ -17,8 +17,7 @@ const LogOutDropdown = () => {
   const handleSignOut=()=>{
     signOut(auth).then(() => {
         
-    }).catch((error) => {
-    // An error happened.
+    }).catch((error) => { 
       navigate("/error");
     });
   }
@@ -29,20 +28,21 @@ const LogOutDropdown = () => {
 
   return (
     <div 
-        className="relative inline-block text-left dropdown" 
+        className=" inline-block text-left dropdown" 
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
     >
-      <span className=" rounded-lg shadow-sm">
+      <span className=" rounded-lg shadow-sm  active:bg-500">
         <span
-          className="inline-flex w-full px-2 py-0 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-gray-100 border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
+          className="inline-flex w-full px-3 py-1 -mt-1 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-gray-100 border border-gray-300 rounded-lg hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
           type="span"
           aria-haspopup="true"
           aria-expanded={isOpen ? 'true' : 'false'}
           aria-controls="headlessui-menu-items-117"
           onClick={toggleDropdown}
         >
-          <Logout theme="filled" size="23" fill="#fc0408"/>
+          LogOut
+          <Logout theme="filled" size="22" fill="#fc0408" className=' pl-1'/>
         </span>
       </span>
       <div
