@@ -17,3 +17,14 @@ export const API_OPTIONS={
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YzlmYWY3M2UwM2UwMjA4ODViYTI5ZmJmNGZiNjIyZiIsInN1YiI6IjY2MDFhZWZmMWIxZjNjMDEzMDk2MDQ0NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0LcxgWSrCnLDGcbU_c1cQw_0PgFs1w22Lej6So4BV68'
   }
 };
+
+
+export const SUPPORTED_LANGUAGES = [
+  { identifier: "en", name: "English" },
+  { identifier: "hindi", name: "Hindi" },
+  { identifier: "marathi", name: "Marathi" },
+  { identifier: "gujarati", name: "Gujarati" },
+  { identifier: "tamil", name: "Tamil" },
+  { identifier: "telugu", name: "Telugu" },
+  { identifier: "punjabi", name: "Punjabi" },
+];

@@ -28,13 +28,13 @@ const LogOutDropdown = () => {
 
   return (
     <div 
-        className=" inline-block text-left dropdown" 
+        className=" inline-block text-left dropdown " 
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
     >
-      <span className=" rounded-lg shadow-sm  active:bg-500">
+      <span className=" shadow-sm px-3 py-[6px] m-2 ml-1 text-sm font-medium  text-gray-700 transition duration-150 ease-in-out bg-gray-100 border border-gray-300 rounded-lg hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-500 active:text-gray-800 ">
         <span
-          className="inline-flex w-full px-3 py-1 -mt-1 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-gray-100 border border-gray-300 rounded-lg hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
+          className="inline-flex "
           type="span"
           aria-haspopup="true"
           aria-expanded={isOpen ? 'true' : 'false'}
@@ -48,9 +48,9 @@ const LogOutDropdown = () => {
       <div
         className={`${
           isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        } dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95`}
+        } dropdown-menu transition-all duration-300 transform origin-top-right translate-y-1 -translate-x-2 scale-95`}
       >
-        <div className="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
+        <div className="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-300 rounded-md shadow-lg outline-none">
           <div className="px-4 py-3">
             <p className="text-sm leading-5">Signed in as</p>
             <p className="cursor-pointer text-sm font-medium leading-5 text-gray-900 truncate">

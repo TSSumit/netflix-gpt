@@ -84,6 +84,9 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 * Added .env file
 * Adding .env file to gitignore
 * Made our Site Responsive
+* GPT Search Page
+* GPT Search Bar
+* (BONUS) Multi-language Feature in our App)
 
 # Features
 
